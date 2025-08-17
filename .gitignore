@@ -30,3 +30,11 @@ Thumbs.db
 
 # Publish output
 publish/
+
+# Environment-specific config
+appsettings.Development.json
+
+# Secret files
+*.pfx
+*.key
+*.pem
