@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace AppointmentSystem.Common
 {
     public class ServiceResponse<T>
@@ -21,11 +16,6 @@ namespace AppointmentSystem.Common
             Success = false;
             StatusCode = statusCode;
             ErrorMessages.Add(error);
-        }
-
-        internal void AddError(object value)
-        {
-            throw new NotImplementedException();
         }
     }
 }

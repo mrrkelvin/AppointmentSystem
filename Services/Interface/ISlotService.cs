@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AppointmentSystem.Common;
 using AppointmentSystem.Dtos;
-using AppointmentSystem.Models;
 
 namespace AppointmentSystem.Services.Interface
 {

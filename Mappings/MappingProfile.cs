@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AppointmentSystem.Dtos;
 using AppointmentSystem.Models;
 using AppointmentSystem.Models.Enums;

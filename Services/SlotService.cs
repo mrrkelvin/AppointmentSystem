@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AppointmentSystem.Common;
 using AppointmentSystem.Data;
 using AppointmentSystem.Dtos;
@@ -9,7 +5,6 @@ using AppointmentSystem.Models;
 using AppointmentSystem.Models.Enums;
 using AppointmentSystem.Services.Interface;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace AppointmentSystem.Services
