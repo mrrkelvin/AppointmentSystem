@@ -7,13 +7,9 @@ namespace AppointmentSystem.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AppointmentsController : ControllerBase
+    public class AppointmentsController(IAppointmentService appointmentService) : ControllerBase
     {
-        private IAppointmentService _appointmentService;
-        public AppointmentsController(IAppointmentService appointmentService)
-        {
-            _appointmentService = appointmentService;
-        }
+        private readonly IAppointmentService _appointmentService = appointmentService;
 
         [HttpGet]
         public async Task<IActionResult> GetAppointments() =>

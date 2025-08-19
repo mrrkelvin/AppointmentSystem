@@ -9,16 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppointmentSystem.Services
 {
-    public class SlotService : ISlotService
+    public class SlotService(AppDbContext context, IMapper mapper) : ISlotService
     {
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
-
-        public SlotService(AppDbContext context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
+        private readonly AppDbContext _context = context;
+        private readonly IMapper _mapper = mapper;
 
         public async Task<ServiceResponse<List<SlotSummaryDto>>> GetSlotsAsync()
         {

@@ -6,14 +6,9 @@ namespace AppointmentSystem.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class SlotsController : ControllerBase
+    public class SlotsController(ISlotService slotService) : ControllerBase
     {
-        private ISlotService _slotService;
-
-        public SlotsController(ISlotService slotService)
-        {
-            _slotService = slotService;
-        }
+        private ISlotService _slotService = slotService;
 
         [HttpGet]
         public async Task<IActionResult> GetSlots() =>

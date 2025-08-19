@@ -18,7 +18,10 @@ namespace AppointmentSystem.Mappings
 
             CreateMap<Slot, SlotSummaryDto>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.ToString("yyyy-MM-dd")))
-                .ForMember(dest => dest.Time, opt => opt.MapFrom(src => src.StartTime.ToString("HH:mm")));
+                .ForMember(dest => dest.Time, opt => opt.MapFrom(src => src.StartTime.ToString("HH:mm")))
+                .ForMember(dest => dest.AvailableSlots,
+                    opt => opt.MapFrom(src =>
+                        src.MaxBookings - src.Appointments.Count(a => a.Status == AppointmentStatus.Booked)));
 
             CreateMap<Appointment, AppointmentSummaryDto>();
 

@@ -12,19 +12,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppointmentSystem.Services
 {
-    public class AppointmentService : IAppointmentService
+    public class AppointmentService(AppDbContext context, IMapper mapper) : IAppointmentService
     {
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly AppDbContext _context = context;
+        private readonly IMapper _mapper = mapper;
 
-        public AppointmentService(
-            AppDbContext context,
-            IMapper mapper
-            )
-        {
-            _context = context;
-            _mapper = mapper;
-        }
         public async Task<ServiceResponse<List<AppointmentSummaryDto>>> GetAppointmentsAsync()
         {
             var appointmentSummaryDtos = await _context.Appointments
